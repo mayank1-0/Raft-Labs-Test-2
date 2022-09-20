@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Knight-Chess
+        </title>
+        <script type="text/javascript" src="chess.js"></script>
+    </head>
+    <body>
+        <img src="../public/chess1.png"><br>
+        <h2>Enter below a position to place the other knight at: example: a1, d5 etc.</h2><br>
+        <form action="">
+            <label for="position"> Other knight's position </label>
+            <input id="position" name="position" type="text"></input>
+            <input type="submit" value="submit" onclick="moves()">
+        </form>
+        <h4 id="chess"></h4>
+
+        <script>
+            var mat1=mat
+            var positionX;
+            var positionY;
+            var positionValueX;
+            var positionValueY;
+            function test(x) {
+                alert(x);
+            }
+            var moves = () => {
+                var positionValue = document.getElementById("position").value
+                
+                // Obtaining matrix positions from chess board positions
+                positionValue = positionValue.split("")
+                positionValueY = positionValue[0]
+                positionValueX = positionValue[1]
+
+                switch(positionValueX) {            // e.x. 1,2,3,...
+                    case '1':
+                        positionX=7;
+                        break;
+                    case '2':
+                        positionX=6;
+                        break;
+                    case '3':
+                        positionX=5;
+                        break;
+                    case '4':
+                        positionX=4;
+                        break;
+                    case '5':
+                        positionX=3;
+                        break;
+                    case '6':
+                        positionX=2;
+                        break;
+                    case '7':
+                        positionX=1;
+                        break;
+                    case '8':
+                        positionX=0;
+                        break;
+                    }
+
+                switch(positionValueY) {
+                    case 'a':
+                        positionY=0;
+                        break;
+                    case 'b':
+                        positionY=1;
+                        break;
+                    case 'c':
+                        positionY=2;
+                        break;
+                    case 'd':
+                        positionY=3;
+                        break;
+                    case 'e':
+                        positionY=4;
+                        break;
+                    case 'f':
+                        positionY=5;
+                        break;
+                    case 'g':
+                        positionY=6;
+                        break;
+                    case 'h':
+                        positionY=7;
+                        break;
+                }
+
+                var possibleMoves = findPossibleMoves(mat1, positionX, positionY)
+                test("Number of possible moves: "+ possibleMoves)
+            }
+        </script>
+    </body>
+</html>

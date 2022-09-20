@@ -22,9 +22,7 @@
             var positionY;
             var positionValueX;
             var positionValueY;
-            function test(x) {
-                alert(x);
-            }
+
             var moves = () => {
                 var positionValue = document.getElementById("position").value
                 
@@ -88,7 +86,7 @@
                 }
 
                 var possibleMoves = findPossibleMoves(mat1, positionX, positionY)
-                test("Number of possible moves: "+ possibleMoves)
+                alert("Number of possible moves: "+ possibleMoves)
             }
         </script>
     </body>
